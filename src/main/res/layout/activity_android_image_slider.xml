@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    android:id="@+id/activity_android_image_slider"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context="com.abhishek.travindia.AndroidImageSlider"
+xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#fff"
+    >
+<android.support.v4.view.ViewPager
+            android:id="@+id/viewPageAndroid"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            />
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="201dp"
+
+       >
+       <ScrollView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+
+         <ImageView
+             android:layout_width="60dp"
+             android:layout_height="50dp"
+             android:id="@+id/i1"
+             android:layout_marginTop="10dp"
+             android:src="@drawable/gps_icon"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/t1"
+                   android:layout_marginTop="15dp"
+                   android:text="My Location"
+                   android:textSize="25dp"
+                   android:textColor="#e41515"
+                   android:layout_marginLeft="100dp"
+                   android:onClick="serve"
+                   android:clickable="true"/>
+               <ImageView
+                   android:layout_width="60dp"
+                   android:layout_height="50dp"
+                   android:id="@+id/i2"
+                   android:layout_marginTop="90dp"
+                   android:src="@drawable/add_icon"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/t2"
+                   android:layout_marginTop="97dp"
+                   android:text="Get Address"
+                   android:textSize="25dp"
+                   android:textColor="#e41515"
+                   android:layout_marginLeft="100dp"
+                   android:onClick="c2"
+                   android:clickable="true"
+                   />
+               <ImageView
+                   android:layout_width="60dp"
+                   android:layout_height="50dp"
+                   android:id="@+id/i3"
+                   android:layout_marginTop="170dp"
+                   android:src="@drawable/distance_icon"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/t3"
+                   android:layout_marginTop="177dp"
+                   android:text="Get Route and Distance"
+                   android:textSize="24dp"
+                   android:textColor="#e41515"
+                   android:layout_marginLeft="100dp"
+                   android:onClick="c3"
+                   android:clickable="true"
+                   />
+               <ImageView
+                   android:layout_width="60dp"
+                   android:layout_height="50dp"
+                   android:id="@+id/i4"
+                   android:layout_marginTop="250dp"
+                   android:src="@drawable/diary_gps_icon"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/t4"
+                   android:layout_marginTop="259dp"
+                   android:text="Your Voyage Diary"
+                   android:textSize="24.5dp"
+                   android:textColor="#e41515"
+                   android:layout_marginLeft="100dp"
+                   android:onClick="c4"
+                   android:clickable="true"
+                   />
+               <ImageView
+                   android:layout_width="60dp"
+                   android:layout_height="50dp"
+                   android:id="@+id/i5"
+                   android:layout_marginTop="330dp"
+                   android:src="@drawable/searchplace_icon"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:id="@+id/t5"
+                   android:layout_marginTop="339dp"
+                   android:text="Find Place on Map"
+                   android:textSize="23dp"
+                   android:textColor="#e41515"
+                   android:layout_marginLeft="100dp"
+                   android:onClick="c5"
+                   android:clickable="true"
+                   />
+           </RelativeLayout>
+
+       </ScrollView>
+   </RelativeLayout>
+
+</RelativeLayout>

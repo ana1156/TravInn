@@ -1,0 +1,134 @@
+package com.abhishek.travindia;
+
+/**
+ * Created by abhishek on 12-07-2017.
+ */
+
+
+
+/**
+ * Created by abhishek on 04-07-2017.
+ */
+
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.Cursor;
+import android.database.DatabaseUtils;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+public class NDb extends SQLiteOpenHelper {
+    public static final String dbname = "MyNotes.db";
+    public static final String _id = "_id";
+    public static final String name = "name";
+    public static final String remark = "remark";
+    public static final String dates = "dates";
+    public static final String mynotes = "mynotes";
+    private HashMap hp;
+    SQLiteDatabase db;
+
+    public NDb(Context context) {
+        super(context, dbname, null, 1);
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        // TODO Auto-generated method stub
+        db.execSQL("create table mynotes" + "(_id integer primary key, name text,remark text,dates text)");
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        // TODO Auto-generated method stub
+        db.execSQL("DROP TABLE IF EXISTS " + mynotes);
+        onCreate(db);
+    }
+
+    public Cursor fetchAll() {
+        db = this.getReadableDatabase();
+        Cursor mCursor = db.query(mynotes, new String[]{"_id", "name", "dates", "remark"}, null, null, null, null, null);
+        if (mCursor != null) {
+            mCursor.moveToFirst();
+        }
+        db.close();
+        return mCursor;
+    }
+
+    public boolean insertNotes(String name, String dates, String remark) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("dates", dates);
+        contentValues.put("remark", remark);
+        long re = db.insert(mynotes, null, contentValues);
+        db.close();
+        if (re > 0) return true;
+        else return false;
+    }
+
+    public Cursor getData(int id) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor z = db.rawQuery("select * from " + mynotes + " where _id=" + id + "", null);
+        //db.close();
+        return z;
+
+    }
+
+    public int numberOfRows() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        int numRows = (int) DatabaseUtils.queryNumEntries(db, mynotes);
+        db.close();
+        return numRows;
+    }
+
+    public boolean updateNotes(Integer id, String name, String dates, String remark) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("name", name);
+        contentValues.put("dates", dates);
+        contentValues.put("remark", remark);
+        db.update(mynotes, contentValues, "_id = ? ", new String[]{Integer.toString(id)});
+        long a = db.update(mynotes, contentValues, "_id = ? ", new String[]{Integer.toString(id)});
+        db.close();
+        if (a > 0) return true;
+        else return false;
+
+    }
+
+    public Integer deleteNotes(Integer id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.close();
+        return db.delete(mynotes, "_id = ? ", new String[]{Integer.toString(id)});
+
+    }
+
+
+   /* public Integer deleteNotes(Integer id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(mynotes, "_id = ? ", new String[]{Integer.toString(id)});
+        db.close();
+
+    }
+*/
+
+    public ArrayList getAll() {
+        ArrayList array_list = new ArrayList();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from " + mynotes, null);
+        res.moveToFirst();
+        while (res.isAfterLast() == false) {
+            array_list.add(res.getString(res.getColumnIndex("id")));
+            array_list.add(res.getString(res.getColumnIndex(remark)));
+            array_list.add(res.getString(res.getColumnIndex(dates)));
+            array_list.add(res.getString(res.getColumnIndex(name)));
+            res.moveToNext();
+        }
+        db.close();
+
+        return array_list;
+    }
+}
+

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.abhishek.travindia.MainActivity"
+    android:background="#fff">
+
+    <TextView android:id="@+id/t1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="14dp"
+        android:textColor="#b10b0b"
+        android:textSize="28dp"
+        android:text="My Location"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/i3"
+        android:layout_toEndOf="@+id/i3"
+        android:layout_marginStart="14dp" />
+
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/i1"
+  android:scaleX="2"
+        android:scaleY="2"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:src="@drawable/gps_icon"
+        android:layout_width="30dp"
+        android:layout_alignTop="@+id/t1"
+        android:layout_toStartOf="@+id/t2"
+        android:layout_toLeftOf="@+id/t2" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="60dp"
+        android:src="@drawable/diary_gps_icon"
+        android:layout_marginLeft="67dp"
+        android:id="@+id/i5"
+        android:layout_marginStart="67dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="36dp" />
+
+    <TextView android:id="@+id/t4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#b10b0b"
+        android:textSize="25dp"
+        android:text="Search Place"
+        android:layout_above="@+id/i5"
+        android:layout_alignLeft="@+id/i5"
+        android:layout_alignStart="@+id/i5" />
+
+    <ImageButton
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/address_icon"
+        android:foregroundGravity="center"
+        android:id="@+id/i3"
+        android:layout_above="@+id/t4"
+        android:layout_alignLeft="@+id/t4"
+        android:layout_alignStart="@+id/t4" />
+
+    <TextView android:id="@+id/t3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#b10b0b"
+        android:textSize="28dp"
+        android:text="Get Address"
+        android:layout_above="@+id/i4"
+        android:layout_alignRight="@+id/i4"
+        android:layout_alignEnd="@+id/i4" />
+
+    <TextView android:id="@+id/t2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#b10b0b"
+        android:textSize="29dp"
+        android:text="Get Route"
+        android:layout_marginBottom="46dp"
+        android:layout_above="@+id/i3"
+        android:layout_alignLeft="@+id/i3"
+        android:layout_alignStart="@+id/i3" />
+
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:src="@drawable/distance_icon"
+        android:foregroundGravity="center"
+        android:id="@+id/i2"
+        android:layout_alignBottom="@+id/t2"
+        android:layout_toLeftOf="@+id/i4"
+        android:layout_toStartOf="@+id/i4" />
+    <ImageButton
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:src="@drawable/searchplace_icon"
+        android:id="@+id/i4"
+        android:layout_alignBottom="@+id/t4"
+        android:layout_alignRight="@+id/t5"
+        android:layout_alignEnd="@+id/t5" />
+
+    <TextView android:id="@+id/t5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#b10b0b"
+        android:textSize="25dp"
+        android:text="My Voyage Diary"
+        android:layout_alignBottom="@+id/i5"
+        android:layout_toRightOf="@+id/i3"
+        android:layout_toEndOf="@+id/i3"
+        android:layout_marginBottom="12dp" />
+
+
+
+</RelativeLayout>
